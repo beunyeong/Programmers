@@ -5,13 +5,9 @@ public class Solution {
         
         int answer = 0;
         
-        // int n을 String으로 변환
-        String str = String.valueOf(n);
-        
-        // 문자 '0' = 숫자 48
-        for(int i = 0; i < str.length(); i++) {
-            int digit = str.charAt(i) - '0';
-            answer += digit;
+        while(n > 0) {
+            answer += n % 10;       // 맨 뒤 숫자 가져오기
+            n /= 10;                // 맨 뒤 숫자 제거
         }
 
         return answer;
